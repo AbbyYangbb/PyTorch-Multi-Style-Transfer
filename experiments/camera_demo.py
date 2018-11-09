@@ -38,6 +38,10 @@ def run_demo(args, mirror=False):
 		ret_val, img = cam.read()
 		if mirror: 
 			img = cv2.flip(img, 1)
+                # add check nov7
+		if img is None:
+			print("img is None")
+			break
 		cimg = img.copy()
 		img = np.array(img).transpose(2, 0, 1)
 		# changing style 
